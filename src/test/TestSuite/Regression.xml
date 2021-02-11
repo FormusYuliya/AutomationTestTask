@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Regression" verbose="1"> <!--parallel="tests" thread-count="3"-->
+
+    <test name="invalidLogin">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="PageTests">
+                <methods>
+                    <include name="invalidLoginTest"/>
+                    <include name="validSignInTest"/>
+                    <include name="logoutTest"/>
+                    <include name="listCheck"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+
+</suite>
