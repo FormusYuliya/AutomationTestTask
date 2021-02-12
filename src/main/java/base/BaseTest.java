@@ -16,17 +16,17 @@ public class BaseTest {
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true)
     public void setUp(@Optional String browser) {
+        if (browser == null) browser = "";
         driver = new DriverFactory().getDriver(browser);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
     }
 
 
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
-        System.out.println("Driver is closed");
-        driver.quit();
+        if (driver != null)
+            driver.quit();
     }
 
 }

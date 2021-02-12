@@ -52,7 +52,6 @@
                 <configuration>
                     <suiteXmlFiles>
                         <suiteXmlFile>Regression.xml</suiteXmlFile>
-                        <suiteXmlFile>InvalidLogin.xml</suiteXmlFile>
                     </suiteXmlFiles>
                 </configuration>
             </plugin>

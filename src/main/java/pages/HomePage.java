@@ -38,7 +38,6 @@ public class HomePage extends BasePageObject{
 
     public int getAmountOfPatients() {
         List<WebElement> listRows = findAll(patientsList);
-        System.out.println(listRows.size());
         return listRows.size();
     }
 

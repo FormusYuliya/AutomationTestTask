@@ -74,11 +74,9 @@ public class BasePageObject {
         WebDriverWait wait = new WebDriverWait(driver, 5);
         try {
             if (wait.until(ExpectedConditions.visibilityOf(element)) != null) {
-                System.out.println("alert was  present");
                 return true;
             }
         } catch (TimeoutException ex) {
-            System.out.println("alert was not present");
             return false;
         }
         return false;
@@ -89,10 +87,8 @@ public class BasePageObject {
         List<WebElement> options = driver.findElements(patientSuggestionListOfOptions);
 
         for (WebElement opt : options) {
-            System.out.println(opt.getText());  //List of not selected items
             if (opt.getText().equals("Test Patient - P00201")) {
                 opt.click();
-                System.out.println("the " + "Test Patient - P00201" + " is clicked");
                 return;
             }
         }

@@ -62,7 +62,6 @@ public class NewMedicationRequestPage extends BasePageObject{
 
     public void selectPatient(String patientName) {
         click(patientField);
-        //TODO remove sleep method...
         TestUtilities.sleep(2000);
         type(patientName, patientField);
         selectOptionFromDropdown("Test Patient - P00201", patientSuggestionList, patientSuggestionListOfOptions);
@@ -95,7 +94,6 @@ public class NewMedicationRequestPage extends BasePageObject{
     public void setDate() {
         LocalDate today = LocalDate.now();
         String formattedDate = today.minusDays(1).format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT));
-        System.out.println("SHORT format: " + formattedDate);
         click(prescriptionDateField);
         prescriptionDateField.clear();
         type(formattedDate, prescriptionDateField);
