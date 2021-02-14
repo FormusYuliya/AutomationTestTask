@@ -62,14 +62,14 @@ public class NewMedicationRequestPage extends BasePageObject{
 
     public void selectPatient(String patientName) {
         click(patientField);
-        TestUtilities.sleep(2000);
+        TestUtilities.sleep(3000);
         type(patientName, patientField);
         selectOptionFromDropdown("Test Patient - P00201", patientSuggestionList, patientSuggestionListOfOptions);
     }
 
     public void selectVisit(int visitDateIndex) {
         Select visitDropdown = new Select(visitField);
-        TestUtilities.sleep(2000);
+        TestUtilities.sleep(3000);
         visitDropdown.selectByIndex(visitDateIndex);
     }
 
