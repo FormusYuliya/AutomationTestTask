@@ -9,9 +9,9 @@
             <class name="PageTests">
                 <methods>
                     <include name="invalidLoginTest"/>
-                    <include name="validSignInTest"/>
-                    <include name="logoutTest"/>
-                    <include name="listCheck"/>
+                    <exclude name="validSignInTest"/>
+                    <exclude name="logoutTest"/>
+                    <exclude name="listCheck"/>
                 </methods>
             </class>
         </classes>
