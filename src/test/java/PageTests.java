@@ -22,7 +22,7 @@ public class PageTests extends BaseTest {
 
         Assert.assertEquals(message, "http://demo.hospitalrun.io/#/patients");
         Assert.assertEquals(home.getPageTitle(), "Patient Listing");
-        Assert.assertTrue(home.getAmountOfPatients()>0);
+        Assert.assertTrue(home.getAmountOfPatients() > 0);
     }
 
     @Test
@@ -35,7 +35,7 @@ public class PageTests extends BaseTest {
     }
 
     @Test
-    public void logoutTest(){
+    public void logoutTest() {
         signInPage = new SignInPage(driver);
         signInPage.openPage();
         HomePage home = signInPage.validLogin("hr.doctor@hospitalrun.io", "HRt3st12");
@@ -43,6 +43,7 @@ public class PageTests extends BaseTest {
         Assert.assertTrue(signInPage.getPageHeading().toLowerCase().equals("please sign in"));
         Assert.assertTrue(driver.getCurrentUrl().equals("http://demo.hospitalrun.io/#/login"));
     }
+
     @Test
     public void listCheck() {
         signInPage = new SignInPage(driver);
@@ -51,18 +52,19 @@ public class PageTests extends BaseTest {
         List<String> expectedListOfMedicationOptions = Arrays.asList("Return Medication", "Requests", "Completed", "New Request");
         Assert.assertTrue(home.medicationSectionContains(expectedListOfMedicationOptions));
         NewMedicationRequestPage medPage = home.selectNewMedicationRequest("New Request");
-        medPage.selectPatient("Test Patient");
-        medPage.selectVisit(1);
+        medPage.typeletters("Test Patient ");
+        medPage.selectPatient("Test Patient - P00201");
         medPage.setMedication("Pramoxine");
+        medPage.selectVisit(1);
         medPage.setPrescription("Testing prescription");
-        medPage.setQuantityRequested(TestUtilities.getRandomNumberInRange(1,5));
-        medPage.setRefills(TestUtilities.getRandomNumberInRange(5,10));
+        medPage.setQuantityRequested(TestUtilities.getRandomNumberInRange(1, 5));
+        medPage.setRefills(TestUtilities.getRandomNumberInRange(5, 10));
         medPage.setDate();
         medPage.clickAdd();
         Assert.assertTrue(medPage.alertIsShown());
         Assert.assertTrue(medPage.buttonsShownInAlert());
         medPage.clickOk();
         Assert.assertFalse(medPage.alertIsShown());
-        Assert.assertEquals(medPage.getPageHeading(),"New Medication Request");
+        Assert.assertEquals(medPage.getPageHeading(), "New Medication Request");
     }
 }

@@ -1,11 +1,15 @@
 package pages;
 
+import base.TestUtilities;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
+import java.util.Arrays;
 import java.util.List;
 
 public class BasePageObject {
@@ -87,10 +91,24 @@ public class BasePageObject {
         List<WebElement> options = driver.findElements(patientSuggestionListOfOptions);
 
         for (WebElement opt : options) {
-            if (opt.getText().equals("Test Patient - P00201")) {
+            if (opt.getText().equals(s)) {
                 opt.click();
                 return;
             }
         }
     }
+
+    public void typeOnLetterByLetter(WebElement webElement, String value) {
+        webElement.clear();
+
+        for (int i = 0; i < value.length(); i++){
+            char c = value.charAt(i);
+            String s = new StringBuilder().append(c).toString();
+            webElement.sendKeys(s);
+            TestUtilities.sleep(300);
+        }
+    }
+
+
+
 }

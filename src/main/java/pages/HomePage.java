@@ -9,7 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import java.util.ArrayList;
 import java.util.List;
 
-public class HomePage extends BasePageObject{
+public class HomePage extends BasePageObject {
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -64,7 +64,7 @@ public class HomePage extends BasePageObject{
         return result;
     }
 
-    public NewMedicationRequestPage selectNewMedicationRequest(String linkText){
+    public NewMedicationRequestPage selectNewMedicationRequest(String linkText) {
         driver.findElement(By.linkText(linkText)).click();
         return new NewMedicationRequestPage(driver);
     }

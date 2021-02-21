@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class SignInPage extends BasePageObject{
+public class SignInPage extends BasePageObject {
     public SignInPage(WebDriver driver) {
         super(driver);
     }
@@ -44,8 +44,8 @@ public class SignInPage extends BasePageObject{
         return getText(errorMessage);
     }
 
-    public HomePage validLogin(String name, String password){
-        login(name,password);
+    public HomePage validLogin(String name, String password) {
+        login(name, password);
         return new HomePage(driver);
     }
 }

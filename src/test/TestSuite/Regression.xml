@@ -8,10 +8,10 @@
         <classes>
             <class name="PageTests">
                 <methods>
-                    <include name="invalidLoginTest"/>
+                    <exclude name="invalidLoginTest"/>
                     <exclude name="validSignInTest"/>
                     <exclude name="logoutTest"/>
-                    <exclude name="listCheck"/>
+                    <include name="listCheck"/>
                 </methods>
             </class>
         </classes>

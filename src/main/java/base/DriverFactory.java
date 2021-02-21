@@ -18,6 +18,7 @@ public class DriverFactory {
     public WebDriver getDriver(String browser) {
         switch (browser) {
             case ("chrome"):
+
                 if (systemOS.contains("win"))  {System.setProperty("webdriver.chrome.driver", windowsDrivers + "chromedriver.exe");}
                 else if(systemOS.contains("mac")) {System.setProperty("webdriver.chrome.driver", windowsMac + "chromedriver");}
                 else if (systemOS.contains("nix")) {System.setProperty("webdriver.chrome.driver", windowsLinux + "chromedriver");}
@@ -27,6 +28,7 @@ public class DriverFactory {
                 break;
 
             case ("firefox"):
+
                 if (systemOS.contains("win"))  {System.setProperty("webdriver.gecko.driver", windowsDrivers + "geckodriver.exe");}
                 else if(systemOS.contains("mac")) {System.setProperty("webdriver.gecko.driver", windowsMac + "geckodriver");}
                 else if(systemOS.contains("nix")) {System.setProperty("webdriver.gecko.driver", windowsLinux + "geckodriver");}
@@ -37,9 +39,11 @@ public class DriverFactory {
 
             default:
                 System.out.println("Can not start driver" + browser);
+
                 if (systemOS.contains("win"))  {System.setProperty("webdriver.chrome.driver", windowsDrivers + "chromedriver.exe");}
                 else if(systemOS.contains("mac")) {System.setProperty("webdriver.chrome.driver", windowsMac + "chromedriver");}
                 else if(systemOS.contains("nix")) {System.setProperty("webdriver.chrome.driver", windowsLinux + "chromedriver");}
+
                 driver = new ChromeDriver();
 //                System.out.println(System.getProperty("os.name"));
                 break;

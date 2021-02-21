@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 
-public class NewMedicationRequestPage extends BasePageObject{
+public class NewMedicationRequestPage extends BasePageObject {
     public NewMedicationRequestPage(WebDriver driver) {
         super(driver);
     }
@@ -61,13 +61,14 @@ public class NewMedicationRequestPage extends BasePageObject{
     }
 
     public void selectPatient(String patientName) {
-        click(patientField);
-        TestUtilities.sleep(3000);
-        type(patientName, patientField);
-        selectOptionFromDropdown("Test Patient - P00201", patientSuggestionList, patientSuggestionListOfOptions);
+//        click(patientField);
+//        TestUtilities.sleep(3000);
+//        type(patientName, patientField);
+        selectOptionFromDropdown(patientName, patientSuggestionList, patientSuggestionListOfOptions);
     }
 
     public void selectVisit(int visitDateIndex) {
+        visitField.click();
         Select visitDropdown = new Select(visitField);
         TestUtilities.sleep(3000);
         visitDropdown.selectByIndex(visitDateIndex);
@@ -113,5 +114,12 @@ public class NewMedicationRequestPage extends BasePageObject{
 
     public void clickOk() {
         click(modalOkButton);
+    }
+
+    public void typeletters(String test_patient){
+        click(patientField);
+        typeOnLetterByLetter(patientField,test_patient);
+
+
     }
 }
