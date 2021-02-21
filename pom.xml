@@ -8,8 +8,6 @@
     <artifactId>AutomationTestTask</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
-
     <dependencies>
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
@@ -37,12 +35,12 @@
             <artifactId>surefire-testng</artifactId>
             <version>3.0.0-M5</version>
         </dependency>
-                <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
-                <dependency>
-                    <groupId>io.qameta.allure</groupId>
-                    <artifactId>allure-testng</artifactId>
-                    <version>2.13.8</version>
-                </dependency>
+        <!-- https://mvnrepository.com/artifact/io.qameta.allure/allure-testng -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-testng</artifactId>
+            <version>2.13.8</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -67,7 +65,6 @@
                     </suiteXmlFiles>
                 </configuration>
             </plugin>
-
         </plugins>
     </build>
 

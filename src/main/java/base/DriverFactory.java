@@ -9,18 +9,18 @@ public class DriverFactory {
     public WebDriver getDriver(String browser){
         switch (browser) {
             case ("chrome"):
-                System.setProperty("webdriver.chrome.driver", "src\\drivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src\\drivers\\windows\\chromedriver.exe");
                 driver = new ChromeDriver();
                 System.out.println("CH Driver is launched");
                 break;
             case ("firefox"):
-                System.setProperty("webdriver.gecko.driver", "src\\drivers\\geckodriver.exe");
+                System.setProperty("webdriver.gecko.driver", "src\\drivers\\windows\\geckodriver.exe");
                 driver = new FirefoxDriver();
                 System.out.println("FF Driver is launched");
                 break;
             default:
                 System.out.println("Can not start driver" + browser);
-                System.setProperty("webdriver.chrome.driver", "src\\drivers\\chromedriver.exe");
+                System.setProperty("webdriver.chrome.driver", "src\\drivers\\windows\\chromedriver.exe");
                 driver = new ChromeDriver();
                 break;
         }
